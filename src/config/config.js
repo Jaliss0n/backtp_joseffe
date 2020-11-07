@@ -1,7 +1,9 @@
 require('dotenv/config');
+const fs = require('fs');
  
 // Define a string de conexão com o banco de dados
 module.exports = {
+
     development: {
         database: {
             host: process.env.DB_HOST,
@@ -9,7 +11,17 @@ module.exports = {
             name: process.env.DB_NAME,
             dialect: process.env.DB_DIALECT,
             user: process.env.DB_USER,
-            password: process.env.DB_PASSWORD
+            password: process.env.DB_PASSWORD,
+
+            ssl: {require:true},
+             dialectOptions: {
+                ssl: {
+                  //ca: fs.readFileSync('./certs/BaltimoreCyberTrustRoot.crt.pem'),
+                  require: true,
+                    rejectUnauthorized: false
+                }
+              },    
+
         }
     },
     production: {

@@ -12,7 +12,8 @@ const sequelize = new Sequelize (
     config.database.password,
     {
         host: config.database.host,
-        dialect: config.database.dialect
+        dialect: 'mysql',
+        dialectOptions: config.database.dialectOptions,
     }
 );
  
