@@ -13,14 +13,14 @@ module.exports = {
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
 
-            ssl: {require:true},
+            /*ssl: {require:true},
              dialectOptions: {
                 ssl: {
                   //ca: fs.readFileSync('./certs/BaltimoreCyberTrustRoot.crt.pem'),
                   require: true,
                     rejectUnauthorized: false
                 }
-              },    
+              },    */
 
         }
     },
